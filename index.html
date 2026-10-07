@@ -32,11 +32,9 @@
             font-size: 2.2rem;
         }
 
-        /* Contenitore carousel ampliato */
         .carousel-container {
             width: 100%;
-            max-width: 440px;
-            /* Aumentato per una card più grande */
+            max-width: 460px;
             position: relative;
             padding: 0 40px;
         }
@@ -54,15 +52,16 @@
             color: #333;
             border-bottom: 1px solid #e9ecef;
             font-weight: 700;
-            padding: 0.85rem 1.5rem;
-            /* Padding maggiorato per dare corpo alla tabella */
+            padding: 0.85rem 1.25rem;
+            display: grid;
+            grid-template-columns: 45px 1fr 60px; /* Ora | Materia | Classe */
+            align-items: center;
         }
 
         /* Header Giorno */
         .day-header {
             color: #ffffff;
             font-size: 1.5rem;
-            /* Font più grande per il giorno */
             font-weight: 800;
             text-align: center;
             text-transform: uppercase;
@@ -70,49 +69,37 @@
             letter-spacing: 1px;
         }
 
-        .day-1 {
-            background-color: #ebb606;
-        }
+        .day-1 { background-color: #ebb606; }
+        .day-2 { background-color: #b63232; }
+        .day-3 { background-color: #366a94; }
+        .day-4 { background-color: #c74e9e; }
+        .day-5 { background-color: #cf532d; }
 
-        .day-2 {
-            background-color: #b63232;
-        }
-
-        .day-3 {
-            background-color: #366a94;
-        }
-
-        .day-4 {
-            background-color: #c74e9e;
-        }
-
-        .day-5 {
-            background-color: #cf532d;
-        }
-
-        /* Badge ed evidenziatori ingranditi */
+        /* Badge ed evidenziatori */
         .hour-badge {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 800;
-            color: #444;
+            color: #555;
+            text-align: left;
         }
 
         .subject {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-align: center;
+            color: #444;
+        }
+
+        .class-badge {
+            font-size: 1.2rem;
             font-weight: 800;
+            color: #222;
+            text-align: right;
         }
 
-        .comp {
-            color: #70ad47;
-        }
-
-        .mensa {
-            color: #031cfa;
-        }
-
-        .giallo {
-            color: #eb9b06;
-        }
+        .comp { color: #70ad47; }
+        .mensa { color: #031cfa; }
+        .giallo { color: #eb9b06; }
 
         /* Frecce laterali */
         .carousel-control-prev,
@@ -125,15 +112,10 @@
             border-radius: 50%;
         }
 
-        .carousel-control-prev {
-            left: 0;
-        }
+        .carousel-control-prev { left: 0; }
+        .carousel-control-next { right: 0; }
 
-        .carousel-control-next {
-            right: 0;
-        }
-
-        /* Pulsanti Lettere Giorni (invece dei trattini) */
+        /* Indicatori L M M G V */
         .day-letters-indicators {
             display: flex;
             justify-content: center;
@@ -189,22 +171,46 @@
                     <div class="card schedule-card mx-auto">
                         <div class="day-header day-1">Lunedì</div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">8</span> <span class="subject">5B</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">9</span> <span class="subject">5B</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">10</span> <span class="subject">5D</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">11</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">12</span> <span class="subject">5B</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">13</span> <span class="subject">5B</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">14</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">15</span> <span class="subject text-muted">-</span></li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">8</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5B</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">9</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5B</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">10</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5D</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">11</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">12</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5B</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">13</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5B</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">14</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">15</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -214,22 +220,46 @@
                     <div class="card schedule-card mx-auto">
                         <div class="day-header day-2">Martedì</div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">8</span> <span class="subject">5D</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">9</span> <span class="subject">5D</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">10</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">11</span> <span class="subject comp">5B</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">12</span> <span class="subject">5B</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">13</span> <span class="subject">4C</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">14</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">15</span> <span class="subject text-muted">-</span></li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">8</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5D</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">9</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5D</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">10</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">11</span>
+                                <span class="subject comp">Materia</span>
+                                <span class="class-badge comp">5B</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">12</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5B</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">13</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">4C</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">14</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">15</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -239,22 +269,46 @@
                     <div class="card schedule-card mx-auto">
                         <div class="day-header day-3">Mercoledì</div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">8</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">9</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">10</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">11</span> <span class="subject">4C</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">12</span> <span class="subject">5B</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">13</span> <span class="subject mensa">5C</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">14</span> <span class="subject giallo">5C</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">15</span> <span class="subject">5C</span></li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">8</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">9</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">10</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">11</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">4C</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">12</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5B</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">13</span>
+                                <span class="subject mensa">Materia</span>
+                                <span class="class-badge mensa">5C</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">14</span>
+                                <span class="subject giallo">Materia</span>
+                                <span class="class-badge giallo">5C</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">15</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5C</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -264,22 +318,46 @@
                     <div class="card schedule-card mx-auto">
                         <div class="day-header day-4">Giovedì</div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">8</span> <span class="subject">5B</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">9</span> <span class="subject">5B</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">10</span> <span class="subject">5B</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">11</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">12</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">13</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">14</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">15</span> <span class="subject text-muted">-</span></li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">8</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5B</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">9</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5B</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">10</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5B</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">11</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">12</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">13</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">14</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">15</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -289,22 +367,46 @@
                     <div class="card schedule-card mx-auto">
                         <div class="day-header day-5">Venerdì</div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">8</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">9</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">10</span> <span class="subject">5D</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">11</span> <span class="subject">5B</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">12</span> <span class="subject">5B</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">13</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">14</span> <span class="subject text-muted">-</span></li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center"><span
-                                    class="hour-badge">15</span> <span class="subject text-muted">-</span></li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">8</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">9</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">10</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5D</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">11</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5B</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">12</span>
+                                <span class="subject">Materia</span>
+                                <span class="class-badge">5B</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">13</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">14</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="hour-badge">15</span>
+                                <span class="subject text-muted">-</span>
+                                <span class="class-badge text-muted">-</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -322,64 +424,31 @@
             </button>
         </main>
 
-        <!-- Selettore Giorni con Lettere (L M M G V) -->
+        <!-- Selettore Giorni (L M M G V) -->
         <nav class="day-letters-indicators" aria-label="Selezione giorno">
-            <button type="button" class="day-btn" data-bs-target="#scheduleCarousel" data-bs-slide-to="0"
-                aria-label="Lunedì">L</button>
-            <button type="button" class="day-btn" data-bs-target="#scheduleCarousel" data-bs-slide-to="1"
-                aria-label="Martedì">M</button>
-            <button type="button" class="day-btn" data-bs-target="#scheduleCarousel" data-bs-slide-to="2"
-                aria-label="Mercoledì">M</button>
-            <button type="button" class="day-btn" data-bs-target="#scheduleCarousel" data-bs-slide-to="3"
-                aria-label="Giovedì">G</button>
-            <button type="button" class="day-btn" data-bs-target="#scheduleCarousel" data-bs-slide-to="4"
-                aria-label="Venerdì">V</button>
+            <button type="button" class="day-btn" data-bs-target="#scheduleCarousel" data-bs-slide-to="0" aria-label="Lunedì">L</button>
+            <button type="button" class="day-btn" data-bs-target="#scheduleCarousel" data-bs-slide-to="1" aria-label="Martedì">M</button>
+            <button type="button" class="day-btn" data-bs-target="#scheduleCarousel" data-bs-slide-to="2" aria-label="Mercoledì">M</button>
+            <button type="button" class="day-btn" data-bs-target="#scheduleCarousel" data-bs-slide-to="3" aria-label="Giovedì">G</button>
+            <button type="button" class="day-btn" data-bs-target="#scheduleCarousel" data-bs-slide-to="4" aria-label="Venerdì">V</button>
         </nav>
     </div>
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <script>
-        // document.addEventListener("DOMContentLoaded", () => {
-        //     const carouselEl = document.getElementById('scheduleCarousel');
-        //     const dayButtons = document.querySelectorAll('.day-btn');
-
-        //     // Selezione automatica in base al giorno della settimana
-        //     const currentDay = new Date().getDay(); // 1 = Lunedì, ..., 5 = Venerdì
-        //     let initialIndex = 0;
-
-        //     if (currentDay >= 1 && currentDay <= 5) {
-        //         initialIndex = currentDay - 1;
-        //     }
-
-        //     const items = document.querySelectorAll('.carousel-item');
-        //     items[initialIndex].classList.add('active');
-        //     dayButtons[initialIndex].classList.add('active');
-
-        //     // Sincronizza lo stato 'active' dei pulsanti L M M G V sullo swipe o cambio pagina
-        //     carouselEl.addEventListener('slide.bs.carousel', (e) => {
-        //         dayButtons.forEach(btn => btn.classList.remove('active'));
-        //         if (dayButtons[e.to]) {
-        //             dayButtons[e.to].classList.add('active');
-        //         }
-        //     });
-        // });
-
         document.addEventListener("DOMContentLoaded", () => {
             const carouselEl = document.getElementById('scheduleCarousel');
             const dayButtons = document.querySelectorAll('.day-btn');
+            
+            const currentDay = new Date().getDay();
+            let initialIndex = 0;
 
-            const currentDay = new Date().getDay(); // 0 = Domenica, 1 = Lunedì, ..., 6 = Sabato
-            let initialIndex = 0; // Default: Lunedì (indice 0)
-
-            // Se è da Lunedì (1) a Venerdì (5), imposta il giorno corrente
             if (currentDay >= 1 && currentDay <= 5) {
                 initialIndex = currentDay - 1;
             } else {
-                // Sabato (6) e Domenica (0) mostrano di default Lunedì (0)
                 initialIndex = 0;
             }
 
@@ -387,7 +456,6 @@
             items[initialIndex].classList.add('active');
             dayButtons[initialIndex].classList.add('active');
 
-            // Sincronizza lo stato 'active' dei pulsanti L M M G V
             carouselEl.addEventListener('slide.bs.carousel', (e) => {
                 dayButtons.forEach(btn => btn.classList.remove('active'));
                 if (dayButtons[e.to]) {
